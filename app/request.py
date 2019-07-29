@@ -90,6 +90,7 @@ def process_article_results(articles_list):
 
     articles_results=[]
     for article_item in articles_list:
+        name=article_item.get(source['name'])
         author=article_item.get('author')
         title=article_item.get('title')
         desc=article_item.get('descripton')
@@ -98,8 +99,11 @@ def process_article_results(articles_list):
         publishedAt=article_item.get('publishedAt')
         content=article_item.get('content')
 
-        article_obj=Article(author,title,desc,url,urlToImage,publishedAt,content)
-        articles_results.append(article_obj)
+        if urlToImage:
+
+
+            article_obj=Article(name,author,title,desc,url,urlToImage,publishedAt,content)
+            articles_results.append(article_obj)
 
     return articles_results    
 
