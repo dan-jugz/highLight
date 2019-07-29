@@ -1,21 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {% if title%}
-    <title>{{ title }}</title>
-    {% else%}
-    <title>Welcome to-articles News App</title>
-    {% endif%}
-</head>
-<body>
-    <h2>News sources</h2>
-    <ul>
-      {% for newsSource in source%}
-      <li>{{ newsSource.name }}</li>
-      {% endfor %}
-    </ul>
-  </body>
-</html>
+{% extends 'base.html' %} {% block content %}
+<h2>News sourcess</h2>
+<ul>
+  {% for newsSource in source%}
+  <li>{{ newsSource.name }}</li>
+  {% endfor %}
+</ul>
+
+{% endblock content%}
