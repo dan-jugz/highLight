@@ -16,12 +16,12 @@ def index():
     print(news_sources)
 
     title = 'NEWS HIGHLIGHTS APP '
-    return render_template('index.html',title = title)
+    return render_template('index.html',title = title,source=news_sources)
     
-    
+
 @app.route("/newswatch/<source_id>")
 def news_source(source_id):
     '''
     View new_source page function that returns a news source page and its data
     '''
-        return render_template('index.html',title=title,source=news_sources)
+    return render_template('newsSource.html',id =source_id)
