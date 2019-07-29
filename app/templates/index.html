@@ -1,9 +1,37 @@
-{% extends 'base.html' %} {% block content %}
-<h2>News sourcess</h2>
+{% extends 'base.html' %} {% import 'macros.html' as macro%} {% block content %}
+
+<h2>Business</h2>
 <ul>
-  {% for newsSource in source%}
-  <li>{{ newsSource.name }}</li>
-  {% endfor %}
+    {{macro.displayNewsSource(business)}}
 </ul>
 
-{% endblock content%}
+<h2>Entertainment</h2>
+<ul>
+    {{macro.displayNewsSource(entertainment)}}
+</ul>
+
+<h2>General</h2>
+<ul>
+    {{macro.displayNewsSource(general)}}
+</ul>
+
+<h2>health</h2>
+<ul>
+    {{macro.displayNewsSource(health)}}
+</ul>
+
+<h2>science</h2>
+<ul>
+    {{macro.displayNewsSource(science)}}
+</ul>
+
+<h2>sports</h2>
+<ul>
+    {{macro.displayNewsSource(sports)}}
+</ul>
+
+<h2>technology</h2>
+<ul>    
+    {{macro.displayNewsSource(tech)}}
+</ul>
+{% endblock content %}

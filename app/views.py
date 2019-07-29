@@ -10,13 +10,19 @@ def index():
     '''
     View root page function that returns the index page and its data
     '''
-
     #Getting the news sources
-    news_sources = get_sources()
-    print(news_sources)
-
+    business_sources=get_sources('business')
+    entertainment_sources=get_sources('entertainment')
+    general_sources=get_sources('general')
+    health_sources=get_sources('health')
+    science_sources=get_sources('science')
+    sports_sources=get_sources('sports')
+    tech_sources=get_sources('technology')
+    
     title = 'Articles highLights APP '
-    return render_template('index.html',title = title,source=news_sources)
+    return render_template('index.html', title=title, business=business_sources,
+                           entertainment=entertainment_sources, general=general_sources, health=health_sources,
+                           science=science_sources, sports=sports_sources, tech=tech_sources)
     
 
 @app.route("/newswatch/<source_id>")
@@ -24,4 +30,4 @@ def news_source(source_id):
     '''
     View new_source page function that returns a news source page and its data
     '''
-    return render_template('newsSource.html',id =source_id)
+    return render_template('newsSource.html',id=source_id)
