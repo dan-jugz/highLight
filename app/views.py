@@ -4,7 +4,6 @@ from .request import get_sources
 
 # Views
 @app.route('/')
-@app.route('/newswatch')
 def index():
 
     '''
