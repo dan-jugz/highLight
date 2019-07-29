@@ -1,38 +1,60 @@
-{% extends 'base.html' %} {% import 'macros.html' as macro%} {% block content %}
+{% extends 'base.html' %} {% import 'macros.html' as macro%}
 
-<h2>Business</h2>
-<ul>
-    {{macro.displayNewsSource(business)}}
-    
-</ul>
+<!-- styles block -->
+{% block styles%}
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}" />
+{% endblock styles%} {% block content %}
 
-<h2>Entertainment</h2>
-<ul>
-    {{macro.displayNewsSource(entertainment)}}
-</ul>
+<div class="container">
+  <div id="row-griddy">
+    <section class="sources">
+      <h2 class="text-center">Business</h2>
+      <div class="row">
+        {{ macro.displayNewsSource(business) }}
+      </div>
+    </section>
 
-<h2>General</h2>
-<ul>
-    {{macro.displayNewsSource(general)}}
-</ul>
+    <section class="sources">
+      <h2 class="text-center">Entertainment</h2>
+      <div class="row">
+        {{ macro.displayNewsSource(entertainment) }}
+      </div>
+    </section>
 
-<h2>health</h2>
-<ul>
-    {{macro.displayNewsSource(health)}}
-</ul>
+    <section class="sources">
+      <h2 class="text-center">sports</h2>
+      <div class="row">
+        {{ macro.displayNewsSource(sports) }}
+      </div>
+    </section>
 
-<h2>science</h2>
-<ul>
-    {{macro.displayNewsSource(science)}}
-</ul>
+    <section class="sources">
+      <h2 class="text-center">health</h2>
+      <div class="row">
+        {{ macro.displayNewsSource(health) }}
+      </div>
+    </section>
 
-<h2>sports</h2>
-<ul>
-    {{macro.displayNewsSource(sports)}}
-</ul>
+    <section class="sources">
+      <h2 class="text-center">science</h2>
+      <div class="row">
+        {{ macro.displayNewsSource(science) }}
+      </div>
+    </section>
 
-<h2>technology</h2>
-<ul>    
-    {{macro.displayNewsSource(tech)}}
-</ul>
-{% endblock content %}
+    <section class="sources">
+      <h2 class="text-center">General</h2>
+      <div class="row">
+        {{ macro.displayNewsSource(general) }}
+      </div>
+    </section>
+
+    <section class="sources">
+      <h2 class="text-center">technology</h2>
+      <div class="row">
+        {{ macro.displayNewsSource(tech) }}
+      </div>
+    </section>
+  </div>
+</div>
