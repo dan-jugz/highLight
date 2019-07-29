@@ -15,7 +15,7 @@ def index():
     news_sources = get_sources()
     print(news_sources)
 
-    title = 'NEWS HIGHLIGHTS APP '
+    title = 'Articles highLights APP '
     return render_template('index.html',title = title,source=news_sources)
     
 
