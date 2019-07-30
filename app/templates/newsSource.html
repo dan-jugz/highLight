@@ -1,14 +1,11 @@
-{% extends 'base.html'%}
-{% import 'macros.html' as macro %}
+{% extends 'base.html'%} {% import 'macros.html' as macro %}
 <!-- content block -->
 
 <!-- styles block -->
 {% block styles%}
 {{ super() }}
 <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}" />
-{% endblock styles%} 
-
-{% block content %}
+{% endblock styles%} {% block content %}
 <div class="container">
         <div class="row major-article">
                 {{macro.displayMajorArticle(majorArticle)}}

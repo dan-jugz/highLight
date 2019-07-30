@@ -32,25 +32,26 @@
 </div>
 {%endmacro%}
 <!-- end of major marco block -->
-
-{% macro displayNewsArticles(article_list) %} {% for article in article_list %}
+<!-- major block 2 macro -->
+{% macro displayMajor2Articles(major2)%}
 <div class="col-sm-12 mb-3">
-    <div class="row inside-cols">
-        <div class="col-sm-4 img-cols">
-          <img
-            src="{{ article.urlToImage }}"
-            alt="{{ article.title }}"
-            class="img-responsive article-img"
-          />
-        </div>
-        <div class="col-sm-8 article-info">
-          <h5 class="text-muted">{{ article.author }}</h5>
-          <h2>{{ article.title }}</h2>
-          <p class="lead">{{ article.description }}</p>
-          <span class="text-muted">{{ article.publishedAt }}</span>
-          <span><a href="{{ article.url }}">Read More...</a></span>
-        </div>
+    <div class="row" id="major-block2-row">
+      {%for article in major2 %}
+      <div class="col-sm-12  col-md-6 col-lg-4 major-img">
+        <img
+          src="{{ article.urlToImage }}"
+          alt="{{ article.title }}"
+          class="img-responsive"
+        />
       </div>
+      <div class="col-sm-12 col-md-6 col-lg-4" id="major-content">
+        <h5 class="text-muted">{{ article.author }}</h5>
+        <h2 class="text-title">
+          <a href="{{ article.url }}">{{ major.title }}</a>
+        </h2>
+        <p class="lead">{{ article.content }}</p>
+        <span class="text-muted">Last Updated:{{ article.publishedAt }}</span>
+      </div>
+      {% endfor%}
     </div>
-{% endfor %} 
-{% endmacro%}
+  </div>
