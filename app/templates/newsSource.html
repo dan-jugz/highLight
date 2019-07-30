@@ -10,6 +10,9 @@
 
 {% block content %}
 <div class="container">
+        <div class="row major-article">
+                {{macro.displayMajorArticle(majorArticle)}}
+            </div>
     <div class="row">
 {{macro.displayNewsArticles(articles) }}
     </div>
