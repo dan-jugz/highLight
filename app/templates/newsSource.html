@@ -12,11 +12,14 @@
                 {{macro.displayMajorArticle(majorArticle)}}
             </div>
     <div class="row major2">
-            {{ macro.displayMajor2Articles(major2Article) }}
-            <header class="header">
-        <h2>latest</h2>
+        {{ macro.displayMajor2Articles(major2Article) }}
+      </div>
+      <div class="row">
+        <header class="header">
+          <h2>latest</h2>
         </header>
         <hr />
-        </div>
+        {{ macro.displayLatestArticles(latestArticle) }}
+      </div>
     </div>
 {% endblock content%}

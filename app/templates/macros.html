@@ -25,7 +25,7 @@
       <h2 class="text-title">
         <a href="{{ major.url }}">{{ major.title }}</a>
       </h2>
-      <p class="lead">{{ major.content }}</p>
+      <p class="lead">{{ major.content | truncate(200) }}</p>
       <span class="text-muted"> last updated:{{ major.publishedAt }}</span>
     </div>
   </div>
@@ -45,7 +45,7 @@
         />
       </div>
       <div class="col-sm-12 col-md-6 col-lg-4" id="major-content">
-        <h5 class="text-muted">{{ article.author }}</h5>
+        <h5 class="text-primary">{{ article.author }}</h5>
         <h2 class="text-title">
           <a href="{{ article.url }}">{{ major.title }}</a>
         </h2>
@@ -68,7 +68,7 @@
     <div class="col-sm-8 article-info">
       <h5 class="text-muted">{{ article.author }}</h5>
       <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
-      <p class="lead">{{ article.content | truncate(50)}}</p>
+      <p class="lead">{{ article.content | truncate(150)}}</p>
       <span class="text-muted">{{ article.publishedAt }}</span>
     </div>
   </div>
