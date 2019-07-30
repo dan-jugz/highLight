@@ -1,12 +1,15 @@
 {% macro displayNewsSource(source_list) %} 
-<div class="card">
-    <div class="card-head">
-      <li>{{ newsSource.desc }}</li>
-    </div>
-    <div class="card-body">
-      <a href="/watchdogs/{{ newsSource.id }}">{{ newsSource.name }}</a>
+{% for newsSource in source_list %}
+<a href="/highLights/{{ newsSource.id }}">
+  <div class="col-md-4 col-sm-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a href="/highLights/{{ newsSource.id }}">{{ newsSource.name }}</a>
+        {{ newsSource.name }}
+      </div>
     </div>
   </div>
+  </a>
 {%endfor%} {% endmacro %}
 
 <!-- Articles Macro(major) -->
@@ -32,12 +35,12 @@
 </div>
 {%endmacro%}
 <!-- end of major marco block -->
-<!-- major block 2 macro -->
 
+<!-- major block 2 macro -->
+{% macro displayMajor2Articles(major2)%}  {%for article in major2 %}
 <div class="col-sm-12 mb-3">
     <div class="row" id="major-block2-row">
-      {% macro displayMajor2Articles(major2)%}  {%for article in major2 %}
-      <div class="col-sm-12  col-md-6 col-lg-4 major-img">
+            <div class="col-sm-12  col-md-6 col-lg-4 major-img">
         <img
           src="{{ article.urlToImage }}"
           alt="{{ article.title }}"
@@ -95,7 +98,7 @@
       <span><a href="{{ article.url }}">Read More...</a></span>
     </div>
   </div>
-</div>
-{% endfor %} {% endmacro%}
+  </div>
     </div>
   </div>
+  {% endfor %} {% endmacro%}
