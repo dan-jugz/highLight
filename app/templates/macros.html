@@ -8,3 +8,23 @@
     </div>
   </div>
 {%endfor%} {% endmacro %}
+
+<!-- Articles Macro -->
+{% macro displayNewsArticles(article_list) %}
+{% for article in article_list %}
+<div class="col-sm-12 mb-3">
+    <div class="row inside-cols">
+        <div class="col-sm-4 img-cols">
+            <img src="{{article.urlToImage}}" alt="{{article.title}}" class="img-responsive article-img">
+        </div>
+        <div class="col-sm-8 article-info">
+            <h5 class="text-muted">{{article.author}}</h5>
+            <h2>{{article.title}}</h2>
+            <p>{{article.description}}</p>
+            <span class="text-muted">{{article.publishedAt}}</span>
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+{% endmacro%}

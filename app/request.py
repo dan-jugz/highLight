@@ -94,7 +94,7 @@ def process_article_results(articles_list):
         # name=article_item.get(source.name)
         author=article_item.get('author')
         title=article_item.get('title')
-        desc=article_item.get('descripton')
+        description=article_item.get('descripton')
         url=article_item.get('url')
         urlToImage=article_item.get('urlToImage')
         publishedAt=article_item.get('publishedAt')
@@ -103,7 +103,7 @@ def process_article_results(articles_list):
         if urlToImage:
 
 
-            article_obj=Article(author,title,desc,url,urlToImage,publishedAt,content)
+            article_obj=Article(author,title,description,url,urlToImage,publishedAt,content)
             articles_results.append(article_obj)
 
     return articles_results    
