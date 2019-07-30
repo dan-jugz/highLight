@@ -33,6 +33,6 @@ def news_source(source_id):
     title=f"{source_id}-page"
     articles = get_articles(source_id)
     majorArticle= articles[0]
-    major2article=articles[1:5]
+    major2article=articles[1:4]
     print(articles)
     return render_template('newsSource.html', title=title,articles=articles,majorArticle=majorArticle,major2article=major2article)

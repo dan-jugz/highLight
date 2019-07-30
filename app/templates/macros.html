@@ -33,10 +33,10 @@
 {%endmacro%}
 <!-- end of major marco block -->
 <!-- major block 2 macro -->
-{% macro displayMajor2Articles(major2)%}
+
 <div class="col-sm-12 mb-3">
     <div class="row" id="major-block2-row">
-      {%for article in major2 %}
+      {% macro displayMajor2Articles(major2)%}  {%for article in major2 %}
       <div class="col-sm-12  col-md-6 col-lg-4 major-img">
         <img
           src="{{ article.urlToImage }}"
@@ -52,6 +52,50 @@
         <p class="lead">{{ article.content }}</p>
         <span class="text-muted">Last Updated:{{ article.publishedAt }}</span>
       </div>
-      {% endfor%}
+      {% endfor%} {% endmacro %}
+
+      <!-- latest macro -->
+      {% macro displayLatestArticles(latest) %} {% for article in latest%}
+  <div class="col-sm-12 mb-3">
+  <div class="row inside-cols">
+    <div class="col-sm-4 img-cols">
+      <img
+        src="{{ article.urlToImage }}"
+        alt="{{ article.title }}"
+        class="img-responsive article-img"
+      />
+    </div>
+    <div class="col-sm-8 article-info">
+      <h5 class="text-muted">{{ article.author }}</h5>
+      <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
+      <p class="lead">{{ article.content | truncate(50)}}</p>
+      <span class="text-muted">{{ article.publishedAt }}</span>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endmacro %}
+<!-- end the latest articles -->
+
+{% macro displayNewsArticles(article_list) %} {% for article in article_list %}
+<div class="col-sm-12 mb-3">
+  <div class="row inside-cols">
+    <div class="col-sm-4 img-cols">
+      <img
+        src="{{ article.urlToImage }}"
+        alt="{{ article.title }}"
+        class="img-responsive article-img"
+      />
+    </div>
+    <div class="col-sm-8 article-info">
+      <h5 class="text-muted">{{ article.author }}</h5>
+      <h2>{{ article.title }}</h2>
+      <p class="lead">{{ article.description }}</p>
+      <span class="text-muted">{{ article.publishedAt }}</span>
+      <span><a href="{{ article.url }}">Read More...</a></span>
+    </div>
+  </div>
+</div>
+{% endfor %} {% endmacro%}
     </div>
   </div>
