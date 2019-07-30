@@ -1,9 +1,9 @@
-from flask import render_template
-from app import app
-from .request import get_sources,get_articles
+from flask import render_template,redirect,url_for
+from . import main
+from ..request import get_sources,get_articles
 
 # Views
-@app.route('/')
+@main.route('/')
 def index():
 
     '''
@@ -24,7 +24,7 @@ def index():
                            science=science_sources, sports=sports_sources, tech=tech_sources)
     
 
-@app.route("/newswatch/<source_id>")
+@main.route("/newswatch/<source_id>")
 def news_source(source_id):
     '''
     View new_source page function that returns a news source page and its data
@@ -34,5 +34,6 @@ def news_source(source_id):
     articles = get_articles(source_id)
     majorArticle= articles[0]
     major2article=articles[1:4]
-    print(articles)
-    return render_template('newsSource.html', title=title,articles=articles,majorArticle=majorArticle,major2article=major2article)
+    latestArticle=articles[5:15]
+    moreArticle=articles[15:]
+    return render_template('newsSource.html', title=title,articles=articles,majorArticle=majorArticle,major2article=major2article,latestArticle=latestArticle,moreArticle=moreArticle)

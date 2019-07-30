@@ -1,10 +1,10 @@
 {% macro displayNewsSource(source_list) %} 
 {% for newsSource in source_list %}
-<a href="/highLights/{{ newsSource.id }}">
+<a href="/newswatch/{{ newsSource.id }}">
   <div class="col-md-4 col-sm-12">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <a href="/highLights/{{ newsSource.id }}">{{ newsSource.name }}</a>
+        <a href="/newswatch/{{ newsSource.id }}">{{ newsSource.name }}</a>
         {{ newsSource.name }}
       </div>
     </div>

@@ -1,7 +1,6 @@
 import unittest
-from models import source
+from app.models import Source
 
-Source = source.Source
 
 class SourcesTest(unittest.TestCase):
     '''
@@ -9,9 +8,6 @@ class SourcesTest(unittest.TestCase):
     '''
 
     def setUp(self):
-        '''
-        Set up method that will run before every test
-        '''
 
         self.new_source=Source('123movies','123 Movies','lorem picsum','https://blahblahblah','madtings','patois','jm')
 
