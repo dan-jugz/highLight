@@ -7,11 +7,16 @@
 <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}" />
 {% endblock styles%} {% block content %}
 <div class="container">
-        <div class="row major-article">
+    <h2>{{ title | upper }}</h2>
+        <div class="row major1">
                 {{macro.displayMajorArticle(majorArticle)}}
             </div>
-    <div class="row">
-{{macro.displayNewsArticles(articles) }}
+    <div class="row major2">
+            {{ macro.displayMajor2Articles(major2Article) }}
+            <header class="header">
+        <h2>latest</h2>
+        </header>
+        <hr />
+        </div>
     </div>
-</div>
 {% endblock content%}
